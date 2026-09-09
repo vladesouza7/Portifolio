@@ -1,868 +1,507 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./static/bootstrap/css/bootstrap.css" />
-    <link rel="stylesheet" href="./static/style.css" />
-    <link rel="icon" type="image/png" href="./static/img/asset-15.png" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
-    />
-    <title>Vlade-Portfolio</title>
-  </head>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfólio de Vlademir Souza - Engenheiro de Software" />
+  <title>Vlademir Souza | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="./static/css/style.css" />
+</head>
+<body>
+  <!-- Mobile Menu Toggle -->
+  <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+    <i class="bi bi-list"></i>
+  </button>
 
-  <body>
-    <i class="bi bi-list menu-mobile"></i>
-
-    <aside id="header">
-      <section class="profile">
-        <img src="./static/img/perfil.png" alt="Foto do Vlademir" />
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-content">
+      <div class="profile">
+        <div class="avatar">
+          <img src="./static/img/perfil.png" alt="Vlademir Souza" onerror="this.src='https://ui-avatars.com/api/?name=Vlademir+Souza&background=0D8ABC&color=fff&size=160'" />
+        </div>
         <h1>Vlademir Souza</h1>
-        <div class="social-links mt-4 text-center">
-          <a
-            target="_blank"
-            href="https://www.linkedin.com/in/vlademir-souza-ads/"
-          >
+        <p class="role" data-i18n="role">Engenheiro de Software</p>
+        
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/vlademir-souza-ads/" target="_blank" rel="noopener" aria-label="LinkedIn">
             <i class="bi bi-linkedin"></i>
           </a>
-          <a target="_blank" href="https://github.com/vladetec">
+          <a href="https://github.com/vladetec" target="_blank" rel="noopener" aria-label="GitHub">
             <i class="bi bi-github"></i>
           </a>
-          <a target="_blank" href="https://www.youtube.com/watch?v=SG2Ft_Pk9q8">
+          <a href="https://www.youtube.com/watch?v=SG2Ft_Pk9q8" target="_blank" rel="noopener" aria-label="YouTube">
             <i class="bi bi-youtube"></i>
           </a>
-          <a target="_blank" href="https://www.instagram.com/vladetec/">
+          <a href="https://www.instagram.com/vladetec/" target="_blank" rel="noopener" aria-label="Instagram">
             <i class="bi bi-instagram"></i>
           </a>
         </div>
-      </section>
+      </div>
 
-      <nav id="navbar" class="nav-menu">
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#inicio"
-              ><i class="bi bi-house" aria-hidden="true"></i> Inicio</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#sobre"
-              ><i class="bi bi-person" aria-hidden="true"></i> Sobre</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#habilidades"
-              ><i class="bi bi-list-check" aria-hidden="true"></i>
-              Habilidades</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#curriculo"
-              ><i class="bi bi-file-earmark" aria-hidden="true"></i>
-              Currículo</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('posts')}}"
-              ><i class="bi bi-collection" aria-hidden="true"></i> Portfólio</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contato"
-              ><i class="bi bi-envelope" aria-hidden="true"></i> Contato</a
-            >
-          </li>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="#inicio" class="nav-link active" data-section="inicio"><i class="bi bi-house"></i> <span data-i18n="nav.home">Início</span></a></li>
+          <li><a href="#sobre" class="nav-link" data-section="sobre"><i class="bi bi-person"></i> <span data-i18n="nav.about">Sobre</span></a></li>
+          <li><a href="#habilidades" class="nav-link" data-section="habilidades"><i class="bi bi-list-check"></i> <span data-i18n="nav.skills">Habilidades</span></a></li>
+          <li><a href="#curriculo" class="nav-link" data-section="curriculo"><i class="bi bi-file-earmark"></i> <span data-i18n="nav.resume">Currículo</span></a></li>
+          <li><a href="#portfolio" class="nav-link" data-section="portfolio"><i class="bi bi-collection"></i> <span data-i18n="nav.portfolio">Portfólio</span></a></li>
+          <li><a href="#contato" class="nav-link" data-section="contato"><i class="bi bi-envelope"></i> <span data-i18n="nav.contact">Contato</span></a></li>
         </ul>
       </nav>
-    </aside>
 
-    <main id="main">
-      <section id="inicio" class="row m-0 p-0">
-        <div id="imagem">
-          <div
-            class="col-md-5 d-flex justify-content-center align-items-center flex-column"
-          >
-            <h2 class="text-primary text-shadow">Vlademir Souza</h2>
-            <span id="subtitle" class="text-primary text-shadow"
-              >Entusiasta de tecnologia e da evolução da informação</span
-            >
-          </div>
+      <div class="sidebar-controls">
+        <div class="theme-toggle">
+          <button id="themeToggle" aria-label="Toggle theme">
+            <i class="bi bi-sun-fill" id="themeIcon"></i>
+          </button>
         </div>
-
-        <div class="col-md-7 d-flex justify-content-end align-items-end">
-          <div id="arraste" class="d-flex align-items-center">
-            <i
-              class="bi bi-arrow-down text-white pe-2 fs-2"
-              aria-hidden="true"
-            ></i>
-            <a href="#sobre">Arrate para mais</a>
-          </div>
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="pt-BR">PT</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="es">ES</button>
         </div>
-      </section>
+      </div>
+    </div>
+  </aside>
 
-      <section class="container mt-5" id="sobre">
-        <div class="row w-100">
-          <div class="col-md-12" data-anime="down">
-            <h2 class="pt-3">Sobre</h2>
-            <p>
-              Eu acredito na tecnologia e na evulução da informação como agentes
-              diretos para tranformação de uma sociedade e no poder da educação
-              como melhor instrumento de mudança e alavancagem das pessoas como
-              um agente transformador de realidades, isso porque sou testemunho
-              com mais de dez anos de experiencias tanto como tecnico e
-              especialista no seguimento de outsourcing de multifuncionais de
-              impressoes pude ver de perto essas mudanças e também tive a
-              oportunidade de formação como Tecnologo em Tecnologia Análise e
-              Desenvolvimento de Sistemas e Pós-graduação em seguranção da
-              informação isso mudou a minha realidade social e econômica.
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Hero -->
+    <section id="inicio" class="section hero">
+      <div class="hero-content">
+        <p class="hero-greeting" data-i18n="hero.greeting">Olá, eu sou</p>
+        <h2 class="hero-name">Vlademir Souza</h2>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">Entusiasta de tecnologia e da evolução da informação</p>
+        <a href="#sobre" class="btn btn-primary" data-i18n="hero.cta">Conhecer mais</a>
+      </div>
+      <div class="scroll-indicator">
+        <a href="#sobre">
+          <i class="bi bi-chevron-down"></i>
+          <span data-i18n="hero.scroll">Role para mais</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="sobre" class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="about.title">Sobre</h2>
+        
+        <div class="about-grid">
+          <div class="about-image">
+            <img src="./static/img/FOTO_PERFIL.png" alt="Vlademir Souza" onerror="this.src='https://ui-avatars.com/api/?name=Vlademir+Souza&background=0D8ABC&color=fff&size=400'" />
+          </div>
+          
+          <div class="about-content">
+            <h3 data-i18n="about.role">Engenheiro de Software</h3>
+            <p class="about-text" data-i18n="about.p1">
+              Eu acredito na tecnologia e na evolução da informação como agentes diretos para transformação de uma sociedade e no poder da educação como melhor instrumento de mudança e alavancagem das pessoas como um agente transformador de realidades, isso porque sou testemunho com mais de dez anos de experiências tanto como técnico e especialista no segmento de outsourcing de multifuncionais de impressões pude ver de perto essas mudanças e também tive a oportunidade de formação como Tecnólogo em Tecnologia Análise e Desenvolvimento de Sistemas e Pós-graduação em segurança da informação isso mudou a minha realidade social e econômica.
+            </p>
+            
+            <div class="info-grid">
+              <div class="info-item">
+                <span class="info-label" data-i18n="about.birthday">Nascimento</span>
+                <span class="info-value">12 de Março de 1982</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label" data-i18n="about.age">Idade</span>
+                <span class="info-value">4.0 anos</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label" data-i18n="about.city">Cidade</span>
+                <span class="info-value">João Pessoa</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label" data-i18n="about.state">Estado</span>
+                <span class="info-value">Paraíba</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label" data-i18n="about.hobby">Hobby</span>
+                <span class="info-value">Cantar</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label" data-i18n="about.site">Site</span>
+                <span class="info-value"><a href="https://github.com/vladetec/meuCurriculo/" target="_blank" rel="noopener">links.Aqui</a></span>
+              </div>
+              <div class="info-item">
+                <span class="info-label" data-i18n="about.work">Trabalho</span>
+                <span class="info-value"><a href="https://www.indracompany.com/pt-br/" target="_blank" rel="noopener">Indra | Minsait</a></span>
+              </div>
+              <div class="info-item">
+                <span class="info-label" data-i18n="about.experience">Experiência</span>
+                <span class="info-value">+10 anos</span>
+              </div>
+            </div>
+
+            <p class="about-text" data-i18n="about.p2">
+              Também atualmente atuo como participante voluntário em um programa social e educativo para crianças e adolescentes de minha comunidade onde ministro aulas de programação e desenvolvimento humano, dicas de carreira, dicas de tecnologias, entre outros assuntos. Tudo isso para tornar a programação cada vez mais acessível para todos!
+            </p>
+            
+            <p class="about-text" data-i18n="about.p3">
+              Atualmente atuo como Engenheiro de Software em uma das maiores companhias de desenvolvimento e tecnologia do mundo trabalhando principalmente com Python, JavaScript e metodologias ágeis com foco back-end utilizando bancos de dados Relacionais e Não-relacionais.
             </p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="row mt-4">
-          <div class="col-md-4">
-            <img
-              class="img-fluid shadow"
-              src="./static/img/FOTO_PERFIL.png"
-              alt="Foto do Vlademir"
-              data-anime="left"
-            />
-          </div>
-          <div class="col-md-8" data-anime="right">
-            <h3>Engenheiro de Software</h3>
-            <p>
-              Atualmente atuo como Engenheiro de Software em uma das maiores
-              companhias de desenvolvimento e tecnologia do mundo trabalhando
-              principalmente com Python JavaScript e metodologias ágeis com foco
-              back-end utilizando bancos de dados Relacionais e Não-relacionais.
-            </p>
+    <!-- Skills -->
+    <section id="habilidades" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title" data-i18n="skills.title">Habilidades</h2>
+        <p class="section-desc" data-i18n="skills.desc">
+          Em todo tempo como profissional de tecnologia eu adquiri algumas habilidades técnicas e não técnicas, a maioria delas estão aqui, Hard Skills de acordo com a porcentagem de conhecimento que eu acredito ter em cada uma delas e Soft Skills.
+        </p>
 
-            <div class="row mt-3 mb-3">
-              <div class="col-md-6">
-                <ul class="list-group list-group-flush fs-5">
-                  <li class="list-group-item">
-                    Niver: <span class="fw-lighter">12 de Março de 1982</span>
-                  </li>
-                  <li class="list-group-item">
-                    Idade: <span class="fw-lighter">4.0 anos</span>
-                  </li>
-                  <li class="list-group-item">
-                    Cidade:
-                    <span class="fw-lighter">João Pessoa</span>
-                  </li>
-                  <li class="list-group-item">
-                    Estado: <span class="fw-lighter">Paraiba</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-md-6">
-                <ul class="list-group list-group-flush fs-5">
-                  <li class="list-group-item">
-                    Hobby: <span class="fw-lighter">Cantar</span>
-                  </li>
-                  <li class="list-group-item">
-                    Site:
-                    <a
-                      href="https://github.com/vladetec/meuCurriculo/"
-                      target="_blank"
-                      class="fw-lighter text-decoration-none link-dark"
-                      >links.Aqui</a
-                    >
-                  </li>
-                  <li class="list-group-item">
-                    Trabalho:
-                    <a
-                      href="https://www.indracompany.com/pt-br/"
-                      target="_blank"
-                      class="fw-lighter text-decoration-none link-dark"
-                      >Indra | Minsait</a
-                    >
-                  </li>
-                  <li class="list-group-item">
-                    Experiência: <span class="fw-lighter"> +10 anos</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <p>
-              Também atualmente atuo como e participante volutario em um
-              programa social e educativo para crianças e adolecentes de minha
-              comunidade onde ministro aulas de programação e desenvolvimento
-              humano, dicas de carreira, dicas de tecnologias, entre outros
-              assuntos. Tudo isso para tornar a programação cada vez mais
-              acessível para todos!
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="mt-5 section-bg" id="habilidades">
-        <div class="container pb-5">
-          <h2 class="pt-5">Habilidades</h2>
-          <p>
-            Em todo tempo como profissional de tecnologia eu adquiri algumas
-            habilidades técnicas e não técnicas, a maioria delas estão aqui,
-            Hard Skills de acordo com a porcentagem de conhecimento que eu
-            acredito ter em cada uma delas em Soft Skills.
-          </p>
-          <h5 class="pt-5">Hard Skills</h5>
-		  <div class="row">
-            <div class="col-md-6">
-			 <p class="mt-3 mb-0">Python</p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  data-anime="left"
-                  role="progressbar"
-                  style="width: 80%"
-                  aria-valuenow="80"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  90%
+        <div class="skills-wrapper">
+          <div class="skills-group">
+            <h3 data-i18n="skills.hard">Hard Skills</h3>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span>Python</span>
+                  <span class="skill-percent">90%</span>
                 </div>
+                <div class="progress-bar"><div class="progress-fill" style="--progress: 90%"></div></div>
               </div>
-			  <p class="mt-3 mb-0">Java</p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  data-anime="left"
-                  role="progressbar"
-                  style="width: 60%"
-                  aria-valuenow="60"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  60%
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span>Java</span>
+                  <span class="skill-percent">60%</span>
                 </div>
+                <div class="progress-bar"><div class="progress-fill" style="--progress: 60%"></div></div>
               </div>
-			  <p class="mt-3 mb-0">TypeScript</p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  data-anime="left"
-                  role="progressbar"
-                  style="width: 60%"
-                  aria-valuenow="60"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  60%
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span>TypeScript</span>
+                  <span class="skill-percent">60%</span>
                 </div>
+                <div class="progress-bar"><div class="progress-fill" style="--progress: 60%"></div></div>
               </div>
-              <p class="mt-3 mb-0">HTML</p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  role="progressbar"
-                  style="width: 70%"
-                  aria-valuenow="70"
-                  data-anime="left"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  80%
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span>HTML</span>
+                  <span class="skill-percent">80%</span>
                 </div>
+                <div class="progress-bar"><div class="progress-fill" style="--progress: 80%"></div></div>
               </div>
-              <p class="mt-3 mb-0">CSS</p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  data-anime="left"
-                  role="progressbar"
-                  style="width: 65%"
-                  aria-valuenow="65"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  65%
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span>CSS</span>
+                  <span class="skill-percent">65%</span>
                 </div>
+                <div class="progress-bar"><div class="progress-fill" style="--progress: 65%"></div></div>
               </div>
-              <p class="mt-3 mb-0">JavaScript</p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  data-anime="left"
-                  role="progressbar"
-                  style="width: 75%"
-                  aria-valuenow="75"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  75%
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span>JavaScript</span>
+                  <span class="skill-percent">75%</span>
                 </div>
+                <div class="progress-bar"><div class="progress-fill" style="--progress: 75%"></div></div>
               </div>
-              
-             
-              
-              <p class="mt-3 mb-0">Git</p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  data-anime="left"
-                  role="progressbar"
-                  style="width: 90%"
-                  aria-valuenow="90"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  90%
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span>Git</span>
+                  <span class="skill-percent">90%</span>
                 </div>
+                <div class="progress-bar"><div class="progress-fill" style="--progress: 90%"></div></div>
               </div>
-              <p class="mt-3 mb-0">Deploy</p>
-              <div class="progress mb-3">
-                <div
-                  class="progress-bar"
-                  data-anime="left"
-                  role="progressbar"
-                  style="width: 70%"
-                  aria-valuenow="70"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  70%
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span>Deploy</span>
+                  <span class="skill-percent">70%</span>
                 </div>
+                <div class="progress-bar"><div class="progress-fill" style="--progress: 70%"></div></div>
               </div>
-            </div>
-            <div class="col-md-6">
-              <p class="mt-3 mb-0">Angular</p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  data-anime="left"
-                  role="progressbar"
-                  style="width: 50%"
-                  aria-valuenow="50"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  50%
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span>Angular</span>
+                  <span class="skill-percent">50%</span>
                 </div>
+                <div class="progress-bar"><div class="progress-fill" style="--progress: 50%"></div></div>
               </div>
-              <p class="mt-3 mb-0">ReactJs</p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  data-anime="left"
-                  role="progressbar"
-                  style="width: 50%"
-                  aria-valuenow="50"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  50%
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span>ReactJs</span>
+                  <span class="skill-percent">50%</span>
                 </div>
+                <div class="progress-bar"><div class="progress-fill" style="--progress: 50%"></div></div>
               </div>
-              <p class="mt-3 mb-0">NodeJs (Express)</p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  data-anime="left"
-                  role="progressbar"
-                  style="width: 75%"
-                  aria-valuenow="75"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  75%
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span>NodeJs (Express)</span>
+                  <span class="skill-percent">75%</span>
                 </div>
+                <div class="progress-bar"><div class="progress-fill" style="--progress: 75%"></div></div>
               </div>
-			  <p class="mt-3 mb-0">FastAPI</p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  data-anime="left"
-                  role="progressbar"
-                  style="width: 80%"
-                  aria-valuenow="80"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  90%
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span>FastAPI</span>
+                  <span class="skill-percent">90%</span>
                 </div>
-			</div>
-              <p class="mt-3 mb-0">Flask</p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  data-anime="left"
-                  role="progressbar"
-                  style="width: 80%"
-                  aria-valuenow="80"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  85%
-                </div>
+                <div class="progress-bar"><div class="progress-fill" style="--progress: 90%"></div></div>
               </div>
-              <p class="mt-3 mb-0">Django</p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  data-anime="left"
-                  role="progressbar"
-                  style="width: 80%"
-                  aria-valuenow="80"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  95%
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span>Flask</span>
+                  <span class="skill-percent">85%</span>
                 </div>
+                <div class="progress-bar"><div class="progress-fill" style="--progress: 85%"></div></div>
               </div>
-              <p class="mt-3 mb-0">Spring</p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  data-anime="left"
-                  role="progressbar"
-                  style="width: 60%"
-                  aria-valuenow="60"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  60%
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span>Django</span>
+                  <span class="skill-percent">95%</span>
                 </div>
+                <div class="progress-bar"><div class="progress-fill" style="--progress: 95%"></div></div>
               </div>
-              <p class="mt-3 mb-0">SQL</p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  data-anime="left"
-                  role="progressbar"
-                  style="width: 75%"
-                  aria-valuenow="75"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  75%
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span>Spring</span>
+                  <span class="skill-percent">60%</span>
                 </div>
+                <div class="progress-bar"><div class="progress-fill" style="--progress: 60%"></div></div>
               </div>
-              <p class="mt-3 mb-0">NoSQL</p>
-              <div class="progress mb-3">
-                <div
-                  class="progress-bar"
-                  data-anime="left"
-                  role="progressbar"
-                  style="width: 65%"
-                  aria-valuenow="65"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  65%
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span>SQL</span>
+                  <span class="skill-percent">75%</span>
                 </div>
+                <div class="progress-bar"><div class="progress-fill" style="--progress: 75%"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span>NoSQL</span>
+                  <span class="skill-percent">65%</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" style="--progress: 65%"></div></div>
               </div>
             </div>
           </div>
 
-          <hr class="w-50 me-auto ms-auto" />
-          <h5 class="pt-5">Sof Skills</h5>
-          <div class="row">
-            <div class="col-md-6">
-              <p class="mt-3 mb-0">Trabalho em equipe</p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  data-anime="left"
-                  role="progressbar"
-                  style="width: 95%"
-                  aria-valuenow="95"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  95%
+          <div class="skills-group">
+            <h3 data-i18n="skills.soft">Soft Skills</h3>
+            <div class="skills-grid soft">
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span data-i18n="skills.teamwork">Trabalho em equipe</span>
+                  <span class="skill-percent">95%</span>
                 </div>
+                <div class="progress-bar"><div class="progress-fill" style="--progress: 95%"></div></div>
               </div>
-
-              <p class="mt-3 mb-0">Proatividade</p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  data-anime="left"
-                  role="progressbar"
-                  style="width: 98%"
-                  aria-valuenow="98"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  98%
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span data-i18n="skills.proactivity">Proatividade</span>
+                  <span class="skill-percent">98%</span>
                 </div>
+                <div class="progress-bar"><div class="progress-fill" style="--progress: 98%"></div></div>
               </div>
-
-              <p class="mt-3 mb-0">Orientação a detalhes</p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  data-anime="left"
-                  role="progressbar"
-                  style="width: 85%"
-                  aria-valuenow="85"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  85%
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span data-i18n="skills.detail">Orientação a detalhes</span>
+                  <span class="skill-percent">85%</span>
                 </div>
+                <div class="progress-bar"><div class="progress-fill" style="--progress: 85%"></div></div>
               </div>
-            </div>
-            <div class="col-md-6">
-              <p class="mt-3 mb-0">Comunicação</p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  data-anime="left"
-                  role="progressbar"
-                  style="width: 95%"
-                  aria-valuenow="95"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  95%
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span data-i18n="skills.communication">Comunicação</span>
+                  <span class="skill-percent">95%</span>
                 </div>
+                <div class="progress-bar"><div class="progress-fill" style="--progress: 95%"></div></div>
               </div>
-
-              <p class="mt-3 mb-0">Empatia</p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  data-anime="left"
-                  role="progressbar"
-                  style="width: 85%"
-                  aria-valuenow="85"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  85%
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span data-i18n="skills.empathy">Empatia</span>
+                  <span class="skill-percent">85%</span>
                 </div>
+                <div class="progress-bar"><div class="progress-fill" style="--progress: 85%"></div></div>
               </div>
-
-              <p class="mt-3 mb-0">Comprometimento</p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  data-anime="left"
-                  role="progressbar"
-                  style="width: 98%"
-                  aria-valuenow="98"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  98%
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span data-i18n="skills.commitment">Comprometimento</span>
+                  <span class="skill-percent">98%</span>
                 </div>
+                <div class="progress-bar"><div class="progress-fill" style="--progress: 98%"></div></div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="mt-5 cv" id="curriculo">
-        <div class="container pb-5">
-          <h2 class="pt-3 pb-4">Currículo</h2>
-
-          <div class="row">
-            <div class="col-md-6">
-              <h3 class="cv-title">Educação</h3>
-
-              <div class="cv-item" data-anime="up">
-                <h4>Tecnologia em Análise e desenvolvimento de sistemas .</h4>
-                <h5>2009 - 2013</h5>
-                <p><em>UNITINS</em></p>
-                <p>
-                  Tecnologo em Análise e Desenvolvimento de Sistemas analisa,
-                  projeta, documenta, especifica, testa, implanta e mantém
-                  sistemas com metodologias de construção de projetos,
-                  preocupação com a qualidade, usabilidade, robustez,
-                  integridade e segurança de programas voltada a área de
-                  desenvolvimento com o foco em tecnologia da informação e
-                  ciências da informação.
-                </p>
-              </div>
-
-              <div class="cv-item" data-anime="up">
-                <h4>Técnico em Informatica</h4>
-                <h5>2006 - 2007</h5>
-                <p><em>Senac - João Pessoa</em></p>
-                <p>
-                  Curso voltado a programação de computadores e suporte técnico
-                  afim de atender a diversas demandas de uma corporação,
-                  contribuindo para o crescimento e aperfeiçoamento dos
-                  processos de tecnologia.
-                </p>
-              </div>
+    <!-- Resume -->
+    <section id="curriculo" class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="resume.title">Currículo</h2>
+        
+        <div class="resume-grid">
+          <div class="resume-column">
+            <h3 class="resume-heading" data-i18n="resume.education">Educação</h3>
+            
+            <div class="resume-item">
+              <div class="resume-date">2009 - 2013</div>
+              <h4>Tecnologia em Análise e desenvolvimento de sistemas</h4>
+              <p class="resume-org">UNITINS</p>
+              <p data-i18n="resume.edu1">
+                Tecnólogo em Análise e Desenvolvimento de Sistemas analisa, projeta, documenta, especifica, testa, implanta e mantém sistemas com metodologias de construção de projetos, preocupação com a qualidade, usabilidade, robustez, integridade e segurança de programas voltada a área de desenvolvimento com o foco em tecnologia da informação e ciências da informação.
+              </p>
             </div>
-            <div class="col-md-6">
-              <h3 class="cv-title">Profissional</h3>
+            
+            <div class="resume-item">
+              <div class="resume-date">2006 - 2007</div>
+              <h4>Técnico em Informática</h4>
+              <p class="resume-org">Senac - João Pessoa</p>
+              <p data-i18n="resume.edu2">
+                Curso voltado a programação de computadores e suporte técnico a fim de atender a diversas demandas de uma corporação, contribuindo para o crescimento e aperfeiçoamento dos processos de tecnologia.
+              </p>
+            </div>
+          </div>
 
-              <div class="cv-item" data-anime="up">
-                <h4>Analista de Sistemas</h4>
-                <h5>2021 - atual</h5>
-                <p><em>Indra | Minsait</em></p>
-                <p>
-                  Atuação no desenvolvimento de aplicações e soluçoes com
-                  levantamento de requisitos montagem de senarios, analisa,
-                  projeta, documenta, especifica, testa, implanta e mantém
-                  sistemas com metodologias de construção de projetos,
-                  preocupação com a qualidade, usabilidade, robustez,
-                  integridade e segurança.
-                </p>
-              </div>
-
-              <div class="cv-item" data-anime="up">
-                <h4>Especialista Técnico</h4>
-                <h5>2014 - 2021</h5>
-                <p><em>CopyLine</em></p>
-                <p>
-                  Implantação, instalação de softwares configurações de
-                  conectividade, treinamento de usabilidade de softwares, testes
-                  e rotinas de resposta a logs de eventos e erros.
-                </p>
-              </div>
+          <div class="resume-column">
+            <h3 class="resume-heading" data-i18n="resume.professional">Profissional</h3>
+            
+            <div class="resume-item">
+              <div class="resume-date">2021 - atual</div>
+              <h4 data-i18n="resume.job1.title">Analista de Sistemas</h4>
+              <p class="resume-org">Indra | Minsait</p>
+              <p data-i18n="resume.job1.desc">
+                Atuação no desenvolvimento de aplicações e soluções com levantamento de requisitos, montagem de cenários, analisa, projeta, documenta, especifica, testa, implanta e mantém sistemas com metodologias de construção de projetos, preocupação com a qualidade, usabilidade, robustez, integridade e segurança.
+              </p>
+            </div>
+            
+            <div class="resume-item">
+              <div class="resume-date">2014 - 2021</div>
+              <h4 data-i18n="resume.job2.title">Especialista Técnico</h4>
+              <p class="resume-org">CopyLine</p>
+              <p data-i18n="resume.job2.desc">
+                Implantação, instalação de softwares, configurações de conectividade, treinamento de usabilidade de softwares, testes e rotinas de resposta a logs de eventos e erros.
+              </p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="portfolio" class="section-bg mt-5">
-        <div class="container pb-5 pt-5" data-anime="left">
-          <h2 class="pb-4">Portfólio</h2>
-
-          <div
-            id="carouselPortfolio"
-            class="carousel carousel-dark slide"
-            data-bs-ride="carousel"
-          >
-            <div class="carousel-indicators">
-              <button
-                type="button"
-                data-bs-target="#carouselPortfolio"
-                data-bs-slide-to="0"
-                class="active"
-                aria-current="true"
-                aria-label="Slide 1"
-              ></button>
-              <button
-                type="button"
-                data-bs-target="#carouselPortfolio"
-                data-bs-slide-to="1"
-                aria-label="Slide 2"
-              ></button>
+    <!-- Portfolio -->
+    <section id="portfolio" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title" data-i18n="portfolio.title">Portfólio</h2>
+        
+        <div class="portfolio-grid">
+          <article class="portfolio-card">
+            <div class="card-image">
+              <img src="./static/img/Blog_Post.png" alt="Blog Post" onerror="this.src='https://placehold.co/600x400/0D8ABC/fff?text=Blog+Post'" />
             </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="10000">
-                <div class="row row-cols-1 row-cols-md-3 g-4">
-                  <div class="col">
-                    <div class="card">
-                      <img
-                        src="./static/img/Blog_Post.png"
-                        class="card-img-top img-fluid w-100"
-                        alt="print do blog"
-                      />
-                      <div class="card-body">
-                        <h5 class="card-title">Blog POst</h5>
-                        <p class="card-text">
-                          Projeto fullstack criado com Flask, Bootstrap, deploy
-                          realizado no Heroku.
-                        </p>
-                        <div class="d-flex justify-content-center">
-                          <a
-                            href="https://github.com/vladetec/portifolio-blog-posts"
-                            target="_blank"
-                            class="btn btn-outline-dark me-3"
-                            ><i class="bi bi-github"></i
-                          ></a>
-                          <a
-                            href="https://portifolio-vladetec.herokuapp.com/"
-                            target="_blank"
-                            class="btn btn-outline-primary"
-                            ><i class="bi bi-link-45deg"></i
-                          ></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card">
-                      <img
-                        src="../static/img/microblog.png"
-                        class="card-img-top img-fluid w-100"
-                        alt="print do blog"
-                      />
-                      <div class="card-body">
-                        <h5 class="card-title">Microblog</h5>
-                        <p class="card-text"></p>
-                        <div class="d-flex justify-content-center">
-                          <a
-                            href="https://github.com/vladetec/make-microblog-flask"
-                            target="_blank"
-                            class="btn btn-outline-dark me-3"
-                            ><i class="bi bi-github"></i
-                          ></a>
-                          <a
-                            href="https://microblog-vladetec.herokuapp.com/"
-                            target="_blank"
-                            class="btn btn-outline-primary"
-                            ><i class="bi bi-link-45deg"></i
-                          ></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <div class="card-body">
+              <h3>Blog Post</h3>
+              <p data-i18n="portfolio.blog">Projeto fullstack criado com Flask, Bootstrap, deploy realizado no Heroku.</p>
+              <div class="card-actions">
+                <a href="https://github.com/vladetec/portifolio-blog-posts" target="_blank" rel="noopener" class="btn btn-outline">
+                  <i class="bi bi-github"></i> Code
+                </a>
+                <a href="https://portifolio-vladetec.herokuapp.com/" target="_blank" rel="noopener" class="btn btn-primary">
+                  <i class="bi bi-link-45deg"></i> Demo
+                </a>
               </div>
             </div>
-            <button
-              class="carousel-control-prev"
-              type="button"
-              data-bs-target="#carouselPortfolio"
-              data-bs-slide="prev"
-            >
-              <span
-                class="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button
-              class="carousel-control-next"
-              type="button"
-              data-bs-target="#carouselPortfolio"
-              data-bs-slide="next"
-            >
-              <span
-                class="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
+          </article>
+
+          <article class="portfolio-card">
+            <div class="card-image">
+              <img src="./static/img/microblog.png" alt="Microblog" onerror="this.src='https://placehold.co/600x400/0D8ABC/fff?text=Microblog'" />
+            </div>
+            <div class="card-body">
+              <h3>Microblog</h3>
+              <p data-i18n="portfolio.microblog">Aplicação de microblog desenvolvida com Flask.</p>
+              <div class="card-actions">
+                <a href="https://github.com/vladetec/make-microblog-flask" target="_blank" rel="noopener" class="btn btn-outline">
+                  <i class="bi bi-github"></i> Code
+                </a>
+                <a href="https://microblog-vladetec.herokuapp.com/" target="_blank" rel="noopener" class="btn btn-primary">
+                  <i class="bi bi-link-45deg"></i> Demo
+                </a>
+              </div>
+            </div>
+          </article>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="pt-5 pb-5" id="contato">
-        <div class="container mb-5">
-          <h2 class="pt-3 pb-3">Contato</h2>
-
-          <div class="row">
-            <div class="col-md-5">
-              <div class="card p-5 shadow border-0" data-anime="up">
-                <div class="endereco">
-                  <h4><i class="bi bi-geo-alt"></i> Localização:</h4>
+    <!-- Contact -->
+    <section id="contato" class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="contact.title">Contato</h2>
+        
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="contact-card">
+              <div class="contact-item">
+                <i class="bi bi-geo-alt"></i>
+                <div>
+                  <h4 data-i18n="contact.location">Localização</h4>
                   <p>João Pessoa, PB</p>
                 </div>
-
-                <div class="email">
-                  <h4><i class="bi bi-envelope"></i> Email:</h4>
+              </div>
+              <div class="contact-item">
+                <i class="bi bi-envelope"></i>
+                <div>
+                  <h4>Email</h4>
                   <p>vladesouza@hotmail.com</p>
                 </div>
-
+              </div>
+              
+              <div class="map-container">
                 <iframe
                   src="https://maps.google.com/maps?q=Jo%C3%A3o%20pessoa%20PB%20&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                  width="400"
-                  height="300"
-                  style="border: 0"
                   allowfullscreen=""
                   loading="lazy"
-                  class="w-100"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="Mapa João Pessoa"
                 ></iframe>
               </div>
             </div>
+          </div>
 
-            <div class="col-md-7 mt-5 mt-md-0">
-              <div class="card p-5 h-100 shadow border-0" data-anime="left">
-                <form class="row g-3" action="/send" method="POST">
-                  <div class="col-md-6">
-                    <label for="nome" class="form-label">Nome:</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="nome"
-                      name="nome"
-                      placeholder="Digite seu nome"
-                      required
-                    />
-                  </div>
-                  <div class="col-md-6">
-                    <label for="email" class="form-label">Email:</label>
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="email"
-                      name="email"
-                      placeholder="Digite seu email"
-                      required
-                    />
-                  </div>
-
-                  <div class="col-12">
-                    <label for="mensagem" class="form-label">Mensagem:</label>
-                    <textarea
-                      type="text"
-                      class="form-control"
-                      id="mensagem"
-                      name="mensagem"
-                      rows="10"
-                      placeholder="Digite sua mensagem"
-                      required
-                    ></textarea>
-                  </div>
-
-                  <div class="col-12 d-flex justify-content-center mt-4">
-                    <button
-                      id="btn-enviar"
-                      type="submit"
-                      class="btn btn-primary"
-                    >
-                      Enviar mensagem
-                    </button>
-
-                    <button
-                      id="btn-enviar-loader"
-                      class="btn btn-primary"
-                      type="button"
-                      disabled
-                    >
-                      <span
-                        class="spinner-border spinner-border-sm"
-                        role="status"
-                        aria-hidden="true"
-                      ></span>
-                      Enviando...
-                    </button>
-                  </div>
-                </form>
+          <div class="contact-form-wrapper">
+            <form class="contact-form" id="contactForm" action="/send" method="POST">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="nome" data-i18n="contact.name">Nome</label>
+                  <input type="text" id="nome" name="nome" required data-i18n-placeholder="contact.namePlaceholder" placeholder="Digite seu nome" />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" required data-i18n-placeholder="contact.emailPlaceholder" placeholder="Digite seu email" />
+                </div>
               </div>
-            </div>
+              <div class="form-group">
+                <label for="mensagem" data-i18n="contact.message">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" rows="6" required data-i18n-placeholder="contact.messagePlaceholder" placeholder="Digite sua mensagem"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-submit" id="btnEnviar">
+                <span data-i18n="contact.send">Enviar mensagem</span>
+              </button>
+            </form>
           </div>
         </div>
-      </section>
-
-     
-      <div
-        id="alerta"
-        class="alert alert-success alert-dismissible fade show"
-        role="alert"
-      >
-        <i class="bi bi-check-circle-fill"></i> 
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="alert"
-          aria-label="Close"
-        ></button>
       </div>
-      
-    </main>
+    </section>
 
-    <footer id="footer">
+    <!-- Footer -->
+    <footer class="footer">
       <div class="container">
-        <div class="text-center">2026
-          &copy; Copyright <strong>VladeTec</strong>
-        </div>
+        <p>&copy; 2026 <strong>VladeTec</strong>. <span data-i18n="footer.rights">Todos os direitos reservados.</span></p>
       </div>
     </footer>
+  </main>
 
-    <script src="./static/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="./static/script.js"></script>
-  </body>
+  <script src="./static/js/i18n.js"></script>
+  <script src="./static/js/main.js"></script>
+</body>
 </html>
